@@ -1,5 +1,5 @@
 # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# #For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
 name: Java CI with Maven - Manual Trigger
 
@@ -15,6 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Run docker-compose
-      run: docker-compose up 
+      run: docker-compose up --exit-code-from automation
            
-    
+    - name: upload artifacts
+      if: always()
+      uses: actions/upload-artifact@v3
+      
