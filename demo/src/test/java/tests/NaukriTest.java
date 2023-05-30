@@ -22,7 +22,7 @@ public class NaukriTest extends BaseTest {
         DashboadPage dash = new DashboadPage();
         String actual = dash.updateKeySkills();
         Assert.assertEquals(actual, "Key Skills have been successfully saved.");
-
+//docker run -p 4444:4444 --name sel selenium/standalone-chrome
     }
 
 }

@@ -1,29 +1,20 @@
 package driver;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
+import java.net.MalformedURLException;
 
-import enums.BrowserType;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
 
 public class Driverfactory {
 
-    public static WebDriver getDriver(String browsername) {
+    public static WebDriver getDriver(String browsername, String runmode) throws MalformedURLException {
 
-        WebDriver driver;
-        if (browsername.equalsIgnoreCase(BrowserType.CHROME.getBrowserValue())) {
-            WebDriverManager.chromedriver().setup();
-
-           /*  System.setProperty("webdriver.chrome.driver",
-                    System.getProperty("user.dir") + "/src/test/java/resources/driver/chromedriver.exe");  */
-
-            driver = new ChromeDriver();
+        WebDriver driver = null;
+        if (runmode.equalsIgnoreCase("local")) {
+            driver = LocalDriverFactory.getLocalDriver(browsername);
 
         } else {
-            driver = new EdgeDriver();
+            driver = RemoteDriverFactory.getRemoteDriver(browsername);
         }
-
         return driver;
 
     }

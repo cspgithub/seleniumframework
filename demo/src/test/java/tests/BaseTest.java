@@ -1,5 +1,7 @@
 package tests;
 
+import java.net.MalformedURLException;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -10,7 +12,7 @@ public class BaseTest {
     
     @BeforeMethod
 
-    public void initiateDriver() {
+    public void initiateDriver() throws MalformedURLException {
 
         Driver.setup();
     }
