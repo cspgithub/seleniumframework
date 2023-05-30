@@ -17,7 +17,4 @@ jobs:
     - name: Run docker-compose
       run: docker-compose up --exit-code-from automation
            
-    - name: upload artifacts
-      if: always()
-      uses: actions/upload-artifact@v3
-      
+   
