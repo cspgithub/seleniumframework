@@ -1,0 +1,6 @@
+standarduser:
+  username: standard_user
+  password: secret_sauce
+problemuser:
+  username: problem_user
+  password: secret_sauce

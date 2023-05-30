@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [SeleniumRegressionSuite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="2" parallel="tests" name="ChromeTest(failed)" verbose="0">
+    <classes>
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="initiateDriver"/>
+          <include name="testHomeTitle" invocation-numbers="1"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [SeleniumRegressionSuite] -->
