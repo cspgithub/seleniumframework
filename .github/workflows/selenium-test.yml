@@ -11,15 +11,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Maven
-        uses: actions/setup-maven@v3
-        with:
-          maven-version: '3.8.4'
+      
+
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package
 
       - name: Install Chrome browser
         run: |
