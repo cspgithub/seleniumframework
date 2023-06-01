@@ -11,7 +11,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      
+      - name: Change to project directory
+        run: cd demo
 
       - name: Set up Java
         uses: actions/setup-java@v3
