@@ -35,4 +35,4 @@ jobs:
 
       - name: Build and run Selenium test
         run: |
-          mvn clean test
+          cd demo && mvn clean test
