@@ -21,7 +21,8 @@ public final class LocalDriverFactory {
             ChromeOptions options = new ChromeOptions();
             // Set page zoom level
            // options.addArguments("--zoom-factor=0.5");
-            options.addArguments("--force-device-scale-factor=0.6"); // Adjust the zoom level as needed
+            options.addArguments("--force-device-scale-factor=0.6");
+            options.addArguments("--headless=new"); // Adjust the zoom level as needed
             driver = new ChromeDriver(options);
 
         } else {
