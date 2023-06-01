@@ -10,6 +10,7 @@ public class LoginPage extends SeleniumActions {
             .xpath("//input[@class='submit-button btn_action']");
 
     public HomePage loginApplication(String username, String password) {
+       
         sendkeys(TEXT_USERNAME, username);
         sendkeys(TEXT_PASSWORD, password);
         jsclick(BTN_SUBMIT);

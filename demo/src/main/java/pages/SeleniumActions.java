@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -51,14 +52,31 @@ public class SeleniumActions {
 
     }
 
-   
-
     protected static String getTitle() {
         return DriverManager.getDriver().getTitle();
     }
 
     protected static String getText(By by) {
         return getElement(by).getText();
+    }
+
+    protected static void highlightElement(By by, int duration) throws InterruptedException {
+        String original_style = getElement(by).getAttribute("style");
+        JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
+        js.executeScript(
+                "arguments[0].setAttribute(arguments[1], arguments[2])",
+                getElement(by),
+                "style",
+                "border: 2px solid red; border-style: dashed;");
+
+        if (duration > 0) {
+            Thread.sleep(duration * 1000);
+            js.executeScript(
+                    "arguments[0].setAttribute(arguments[1], arguments[2])",
+                    getElement(by),
+                    "style",
+                    original_style);
+        }
     }
 
     protected static void actionOnElement(By by, String typeOfAction) {
@@ -86,5 +104,7 @@ public class SeleniumActions {
         }
 
     }
+
+   
 
 }

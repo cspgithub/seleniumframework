@@ -13,6 +13,7 @@ public class LoginPage extends SeleniumActions {
     private static final By NAUKRI_SUBMITBTN = By.xpath("//*[@class='btn-primary loginButton']");
 
     public void loginInNaukri(String username, String passsord) {
+      
         click(NAUKRI_LOGINBTN);
         sendkeys(NAUKRI_USERNAMETXTBOX, username);
         sendkeys(NAUKRI_PASSWORDTEXTBOX, passsord);

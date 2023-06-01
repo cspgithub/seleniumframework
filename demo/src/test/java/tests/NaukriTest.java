@@ -22,7 +22,20 @@ public class NaukriTest extends BaseTest {
         DashboadPage dash = new DashboadPage();
         String actual = dash.updateKeySkills();
         Assert.assertEquals(actual, "Key Skills have been successfully saved.");
-//docker run -p 4444:4444 --name sel selenium/standalone-chrome
+        // docker run -p 4444:4444 --name sel selenium/standalone-chrome
+        /*
+         * automation:
+         * image: automation-test:latest
+         * container_name: automationtest
+         * build: .
+         * shm_size: 2gb
+         * depends_on:
+         * - selenium-hub
+         * - chrome
+         * environment:
+         * - HOST_NAME=selenium-hub
+         */
+
     }
 
 }

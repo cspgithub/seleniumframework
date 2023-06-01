@@ -1,4 +1,3 @@
-#rt
 FROM adoptopenjdk/maven-openjdk13
 WORKDIR /app
 ADD . /app
